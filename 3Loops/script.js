@@ -78,3 +78,22 @@ for (let key in students){
 // Practice set 1
 // question 1. print all even numbers from 0 to 100;
 
+for (let i=0; i<=100; i++){
+  if (i%2===0){
+    console.log(i);
+  }
+} 
+// using while loop
+//  also try it with for-of loop and so while loop
+
+
+// 2. create a game where you start with any random game number. Ask the user to keep guessing the game number until the user enters correct value.
+let gameNum = 25;
+
+let userNum = prompt("Guess the game number : ");
+// console.log(userNum);
+while (userNum != gameNum){
+  userNum = prompt("You entered the wrong number, Guess again: ");
+}
+console.log("Congratulation!, You won the game");
+
