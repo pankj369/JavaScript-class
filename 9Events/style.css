@@ -1,0 +1,31 @@
+div{
+background-color: orange;
+text-align: center;
+justify-content: center;
+border: 2px solid black;
+border-radius: 5px;
+height: 80px;
+width: 80px;
+padding: 10px;
+
+}
+
+button{
+  border-radius: 5px;
+}
+button:hover{
+  background-color: rgb(228, 228, 155);
+}
+div:hover{
+  background-color: rgb(235, 148, 50);
+}
+
+.dark{
+  color: white ;
+  background-color:black ;
+
+}
+.light{
+  color: black;
+  background-color: white;
+}

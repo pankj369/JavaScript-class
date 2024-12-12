@@ -1,0 +1,31 @@
+body {
+  background-color: rgb(107, 209, 146);
+}
+h1 {
+  color: rgb(255, 166, 2);
+  background-color: rgb(159, 118, 172);
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  font-size: 50px;
+}
+
+p {
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  font-size: 30px;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: lightgreen;
+  background-color: black;
+  padding:10px;
+  margin: 5px; 
+  font-size: 30px;
+  border-radius: 10px;
+  border-color: rgb(159, 118, 172);
+  cursor: pointer;
+}
