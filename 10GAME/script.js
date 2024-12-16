@@ -1,26 +1,50 @@
+let userScore = 0;
+let computerScore = 0;
 
-        let playerScore = 0;
-        let computerScore = 0;
+const choices = document.getElementsByTagName("button");
 
-        function playGame(playerChoice) {
-            const choices = ['rock', 'paper', 'scissors'];
-            const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+const genCompChoice = () => {
+  const choices = ["rock", "paper", "scissors"];
+  const randIdx = Math.floor(Math.round() * 3);
+  return choices[randIdx];
+};
 
-            let result = '';
-            if (playerChoice === computerChoice) {
-                result = `It's a tie! You both chose ${playerChoice}.`;
-            } else if (
-                (playerChoice === 'rock' && computerChoice === 'scissors') ||
-                (playerChoice === 'paper' && computerChoice === 'rock') ||
-                (playerChoice === 'scissors' && computerChoice === 'paper')
-            ) {
-                result = `You win! ${playerChoice} beats ${computerChoice}.`;
-                playerScore++;
-            } else {
-                result = `You lose! ${computerChoice} beats ${playerChoice}.`;
-                computerScore++;
-            }
+const drawGame = () => {
+  console.log("it's a draw!");
+};
+const showWinner = (userWin) => {
+  if (userWin) {
+    userScore++;
+    console.log("You Win!");
+  } else {
+    computerScore++;
+    console.log("YOu lose!");
+  }
+  console.log(`User Score: ${userScore}, Computer Score: ${computerScore}`);
+};
+const playGame = (userChoice) => {
+  console.log("User Choice = ", userChoice);
+  const compChoice = genCompChoice();
+  console.log("Computer Choice = ", compChoice);
 
-            document.getElementById('result').innerText = result;
-            document.getElementById('score').innerText = `Player: ${playerScore} | Computer: ${computerScore}`;
-        }
+  if (userChoice === compChoice) {
+    drawGame();
+  } else {
+    let userWin = true;
+    if (userChoice === "rock") {
+      userWin = compChoice === "paper" ? false : true;
+    } else if (userChoice === "paper") {
+      userWin = compChoice === "scissors" ? false : true;
+    } else {
+      userWin = compChoice === "rock" ? false : true;
+    }
+    showWinner(userWin);
+  }
+};
+
+choices.forEach((choice) => {
+  choice.addEventListener("click", () => {
+    const userChoice = choice.getAttribute("choice");
+    playGame(userChoice);
+  });
+});

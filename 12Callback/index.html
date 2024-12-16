@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Callback</h1>
+  <p>what we will study in this chapter : 
+    <ol>
+      <li>async await</li>
+      <li>promise chains</li>
+      <li>callback hell</li>
+    </ol>
+  </p>
+  <p><b>Sync in JS</b>
+  <ol>
+    <li><b>Synchronous</b> :- It means the code run in a particular sequence of instructions given in the program.<br>Each instruction waits for the previous instruction to complete its execution.</li>
+    <li><b>Asynchronous</b> :- Due to synchronous programming, somethings imp instructions get blocked due to some previous instructions, which causes a delay in the UI.<br>Asynchronous code execution allow to execute next instructions immediately and doesn't block the flow.</li>
+  </ol></p>
+  <p><b>Callbacks</b> :- It is a function passed as an argument to another function.</p>
+  <p><b>Callback Hell</b> :- Nested callbacks stacked below one another forming a pyramid strucuture. <br>(Pyramid of Doom) <br>This style of programming becomes difficult to understanding and manage.</p>
+  <p><b>Promises</b> :- Promises is for "eventual" completion of task. Is is an object in js.<br>It is a solution to callback hell.<br>In promises reslove and reject are callbacks provided by JS</p>
+  <p>A JavaScript Promises object can be:<ol>
+    <li>Pending: the result is undefined</li>
+    <li>Resolved: the result is a value(fullfilled)</li>
+    <li>Rejected: the result is an error object</li>
+  </ol></p>
+  <p><b>Async-Await</b> :- async function always returns a promise<br>async function myFunc(){...}<br><b>await</b> pauses the execution of its surrounding async function until the promise is settled.<br>await is only and always used with async function</p>
+<p><b>IIFE</b> :- Immediately Invoked Function Expression<br>
+IIFE is a function that is called immediately as soon as it is defined.</p>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
