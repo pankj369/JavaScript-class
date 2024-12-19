@@ -1,0 +1,37 @@
+ *body{
+   
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  .modal{
+    border: 1px solid black;
+    height: 350px;
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 2px  #ccc;
+    background-color: white;
+    position: fixed;
+    top: -500px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 1s;
+    }
+    .modal h2{
+      text-align: center;
+      border-bottom: 1 px solid #ccc;
+      font-size: 20px;
+      font-weight: normal;
+      padding: 10px 0px;
+      position: relative;
+    }
+    .modal h2 span{
+      position: absolute;
+      right: 10px;
+      top: 0px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .showModal{
+      top:50px;
+    }

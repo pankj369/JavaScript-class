@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Modal</title>
+ 
+  <style>
+    /* Base Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Modal Container */
+.modal {
+  width: 400px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+/* Modal Heading */
+.modal h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #ff3b3b;
+}
+
+/* Modal Content */
+.modal-content {
+  text-align: center;
+  padding: 20px;
+  color: #555;
+}
+
+.action-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Trigger Button */
+.trigger-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.trigger-btn:hover {
+  background-color: #218838;
+}
+
+/* Show Modal Animation */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Modal -->
+  <div class="modal-overlay">
+    <div class="modal">
+      <h2>Enquiry Now
+        <span class="close-btn">&times;</span>
+      </h2>
+      <div class="modal-content">
+        <p>Fill out the form to get in touch with us!</p>
+        <button class="action-btn">Submit Enquiry</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trigger Button -->
+  <button class="trigger-btn">Show Modal</button>
+
+  <script >
+// Select elements
+const triggerBtn = document.querySelector(".trigger-btn");
+const modalOverlay = document.querySelector(".modal-overlay");
+const closeBtn = document.querySelector(".close-btn");
+
+// Show Modal
+triggerBtn.addEventListener("click", () => {
+  modalOverlay.classList.add("active");
+  document.querySelector(".modal").classList.add("active");
+});
+
+// Close Modal
+closeBtn.addEventListener("click", () => {
+  modalOverlay.classList.remove("active");
+  document.querySelector(".modal").classList.remove("active");
+});
+
+// Close Modal when clicking outside
+modalOverlay.addEventListener("click", (e) => {
+  if (e.target === modalOverlay) {
+    modalOverlay.classList.remove("active");
+    document.querySelector(".modal").classList.remove("active");
+  }
+});
+
+  </script>
+</body>
+</html>
